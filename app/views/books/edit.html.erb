@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>WebCampBackendNew</title>
-    <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="kCJJs3YFggAjh2M2lX4CEl2wRr0cnHtf4HL2ldHUc/A/U5QQ8r1blxHxGRQhta+hceIK6IwL5WiSHF9OT09v/g==" />
-
-    <link rel="stylesheet" media="all" href="/assets/application-d12397cbc3a266ce5a99f7b588223090c55ca04a439953bb5f9304395de93fc3.css" data-turbolinks-track="reload" />
-    <script src="/assets/application-4e370d3723b6f204426a9414077d365ea07814cce5619ae24fb7e581988f19ed.js" data-turbolinks-track="reload"></script>
-  </head>
-
   <body>
     <h1>Editing Book</h1>
+
+<% if @book.errors.any? %>
+<h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2>
+<% @book.errors.full_messages.each do |message| %>
+          <%= message %>
+  <% end %>
+<% end %>
 
 <%= form_for(@book) do |f| %>
   <h4>Title</h4>
