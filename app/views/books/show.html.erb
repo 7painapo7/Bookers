@@ -12,6 +12,14 @@
   <body>
     <p id="notice"></p>
 
+
+<p>
+    <% if flash[:notice] %>
+    <div class="flash">
+    <%= flash[:notice] %>
+    </div>
+    <% end %>
+</p>
 <p>
   <strong>Title:</strong>
   <%= @book.title %>
